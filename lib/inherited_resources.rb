@@ -32,7 +32,7 @@ ActiveSupport.on_load(:action_controller) do
     # inherit_resources in your controller to have all the required modules and
     # funcionality included.
     def self.inherit_resources
-      InheritedResources::Base.inherit_resources(self)
+      include InheritedResources::Controller
       initialize_resources_class_accessors!
       create_resources_url_helpers!
     end
